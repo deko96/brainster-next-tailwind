@@ -29,28 +29,32 @@ const stats = [
   },
   {
     title: "Response rate",
-    total: [random(0, 100), '%'].join(''),
-    icon: <MdOutlineQuestionAnswer />
+    total: [random(0, 100), "%"].join(""),
+    icon: <MdOutlineQuestionAnswer />,
   },
   {
     title: "Average sentiment score",
     total: random(0.0, 0.99).toFixed(5),
-    icon: <PiSmileyDuotone />
-  }
+    icon: <PiSmileyDuotone />,
+  },
 ];
 
 export default function SurveysDashboard() {
-
   return (
     <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        {stats.map(({ icon, ...props }) => <CardDataStats key={props.title} {...props}>
-          {icon}
-        </CardDataStats>)}
+        {stats.map(({ icon, ...props }) => (
+          <CardDataStats key={props.title} {...props}>
+            {icon}
+          </CardDataStats>
+        ))}
       </div>
 
       <div className="mt-6 gap-4 md:gap-6 2xl:gap-7.5">
-        <BoxWrap title="Surveys List" titleClassNames="text-xl font-semibold text-black dark:text-white">
+        <BoxWrap
+          title="Surveys List"
+          titleClassNames="text-xl font-semibold text-black dark:text-white"
+        >
           <div className="grid grid-cols-8 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-10 md:px-6 2xl:px-7.5">
             <div className="col-span-4 flex items-center">
               <p className="font-medium">Survey Name</p>
@@ -64,18 +68,22 @@ export default function SurveysDashboard() {
             <div className="col-span-1 flex items-center"></div>
           </div>
 
-          <div
-            className="grid grid-cols-8 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-10 md:px-6 2xl:px-7.5"
-          >
+          <div className="grid grid-cols-8 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-10 md:px-6 2xl:px-7.5">
             <div className="col-span-4 flex items-center">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a className="text-black dark:text-white hover:text-primary" href="#">
+                <a
+                  className="text-black dark:text-white hover:text-primary"
+                  href="#"
+                >
                   My First Survey
                 </a>
               </div>
             </div>
             <div className="col-span-3 hidden items-center sm:flex">
-              <a className="text-black dark:text-white hover:text-primary truncate" href="mailto:dejan.bozinoski@next.edu.mk">
+              <a
+                className="text-black dark:text-white hover:text-primary truncate"
+                href="mailto:dejan.bozinoski@next.edu.mk"
+              >
                 dejan.bozinoski@next.edu.mk
               </a>
             </div>
@@ -100,4 +108,4 @@ export default function SurveysDashboard() {
       </div>
     </>
   );
-};
+}
